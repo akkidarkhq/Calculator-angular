@@ -1,0 +1,10 @@
+.display{
+    width: 250px;
+    height: 40px;
+   
+}
+
+input:active{
+    background: transparent;
+    border: 5px;
+}
