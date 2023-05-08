@@ -1,5 +1,8 @@
 # Calculator
 
+<img width="315" alt="image" src="https://user-images.githubusercontent.com/100999421/236810271-4e480aff-774c-47d5-a1a9-211d9f108d47.png">
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 
 ## Development server
