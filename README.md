@@ -1,6 +1,7 @@
 # Calculator
 
-<img width="315" alt="image" src="https://user-images.githubusercontent.com/100999421/236810271-4e480aff-774c-47d5-a1a9-211d9f108d47.png">
+<img width="799" alt="image" src="https://user-images.githubusercontent.com/100999421/236810433-4b8e9fd6-673a-4605-bdf8-b3c690e02c57.png">
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
