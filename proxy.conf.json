@@ -1,0 +1,8 @@
+{
+    "/calc": {
+      "target": "http://localhost:8080/home/",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    }
+  }

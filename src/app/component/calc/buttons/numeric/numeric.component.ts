@@ -8,8 +8,7 @@ import { CalcServiceService } from '../../calcServices/calc-service.service';
 })
 
 export class NumericComponent {
-
-  numericButtonModel = [0,1,2,3,4,5,6,7,8,9];
+  numericButtonModel = [{value:7},{value:8},{value:9},{value:4},{value:5},{value:6},{value:1},{value:2},{value:3},{value:0},]
 
   constructor(private _calcService: CalcServiceService){
   }

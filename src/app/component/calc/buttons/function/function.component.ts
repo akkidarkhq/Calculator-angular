@@ -10,6 +10,7 @@ import { CalcServiceService } from '../../calcServices/calc-service.service';
 export class FunctionComponent {
   functionBtnModel = ['AC','DEL'];
 
+
   constructor(private _calcService: CalcServiceService){
   }
 

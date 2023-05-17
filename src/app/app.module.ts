@@ -11,8 +11,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
+import { BackendService } from './component/calc/calcServices/backendServices/backend.service';
 import { CalcServiceService } from './component/calc/calcServices/calc-service.service';
 
 @NgModule({
@@ -27,14 +30,15 @@ import { CalcServiceService } from './component/calc/calcServices/calc-service.s
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule,HttpClientModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatButtonModule,
     MatCardModule,
-    FormsModule
+    MatButtonToggleModule,
+    FormsModule,
   ],
-  providers: [CalcServiceService],
+  providers: [CalcServiceService,BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

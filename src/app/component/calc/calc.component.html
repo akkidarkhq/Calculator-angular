@@ -1,11 +1,15 @@
-<mat-card class="cardd">
-    <mat-card-content>
-        <app-display [value]="displayValue" ></app-display>
-        <app-function></app-function>
-        <app-operation></app-operation>
-        <app-numeric></app-numeric>
-    </mat-card-content>
-</mat-card>
+<div class="calcContainer">
+    <mat-card class="cardd">
+        <mat-card-content>
+            <mat-card-title>CASIO</mat-card-title>
+            <app-display [value]="displayValue" class="displayContainer"></app-display>
+            <app-function></app-function>
+            <app-operation></app-operation>
+            <app-numeric></app-numeric>
+        </mat-card-content>
+    </mat-card>
+</div>
+
 
 
 

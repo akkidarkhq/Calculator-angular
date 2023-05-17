@@ -1,6 +1,6 @@
 <div class="numericButtonContainer">
-    <button mat-flat-button color="primary" *ngFor="let bt of numericButtonModel" class="numBtn" (click)="onClick(this.bt)">
-        {{bt}}
+    <button mat-flat-button color="primary" *ngFor="let bt of numericButtonModel,let i = index" class="numBtn numBtn{{i}}" (click)="onClick(this.bt.value)">
+        {{this.bt.value}}
     </button>
 </div>
 

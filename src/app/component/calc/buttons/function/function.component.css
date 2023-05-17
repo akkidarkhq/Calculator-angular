@@ -1,18 +1,18 @@
 
 
-button{
-    height: 50px;
-    width: 50px;
-}
-
 .fnBtnContainer{
-    height: 100px;
+   
     height: 100px;
     margin-top: 20px;
+   
 }
 
 .fnBtn{
-    margin-right: 20px;
+    margin-inline: 5px;
+    font-family: 'orbitron';
+    margin-bottom: 10px;
     height: 40px;
-    width:111px;
+    width: 70px;
+    font-size: 10px;
+   
 }

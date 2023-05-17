@@ -1,17 +1,20 @@
-button{
-    height: 50px;
-    width: 50px;
-}
+
 
 .numericButtonContainer{
 height: 600 px;
-height: 100px;
-margin-top: -1px;
+height: 100 px;
 }
 
 .numBtn{
-    margin-right: 5px;
+    margin-inline: 5px;
     margin-bottom: 5px;
+    font-family: 'orbitron';
     height: 40px;
-    width:px;
+    width: 70px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.numBtn10{
+    width: 150px;
 }

@@ -1,0 +1,17 @@
+button{
+    height: 50px;
+    width: 50px;
+}
+
+.numericButtonContainer{
+height: 600 px;
+height: 100 px;
+}
+
+.numBtn{
+    margin-inline: 5px;
+    margin-bottom: 5px;
+    font-family: 'orbitron';
+    height: 40px;
+    width: 70px;
+}

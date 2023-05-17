@@ -1,7 +1,7 @@
 <div class="operationBtnContainer">
-    <button mat-flat-button color="accent" *ngFor="let bt of operationBtnModel" value="{{bt}}" class="opBtn" (click)="onClick(this.bt)">
-        {{bt}}
+    <button mat-flat-button color="accent" *ngFor="let bt of operationBtnModel,let i = index" value="{{bt.value}}" class="opBtn opBtn{{i}}" [innerHTML]="bt.label" (click)="onClick(this.bt.type,this.bt.value);">
     </button>
+
 </div>
 
 
