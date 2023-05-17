@@ -13,7 +13,9 @@ export class BackendService {
     
   postData(data: string) : any{
     console.log("hhh" + JSON.stringify(data))
-      return this.http.post(this.baseURL+'/calc',JSON.stringify(data));
+    const response = this.http.post(this.baseURL+'/calc',JSON.stringify(data));
+    console.log(response);
+      return  response ;
   }
 
 }

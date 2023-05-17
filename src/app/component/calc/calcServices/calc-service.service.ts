@@ -27,62 +27,59 @@ export class CalcServiceService {
 
     if(key=='AC'){
         this.calcComp.setDisplay('0')
-        this.value = '0';}
+        this.value = '0';
+        this.expressionStack=[];
+      }
       else if(key=='DEL') {
-      this.expressionStack.pop();
-      console.log(this.expressionStack,"after pop")
-       const exp = this.getValue();
-       const str  = exp.substring(0,exp.length-1);
-       this.setValue(str);
+       console.log(this.expressionStack,"after pop")
+       let  exp = this.calcComp.getDisplay()+"";
+        this.setValue(exp.slice(0,exp.length-1));
       }
   }
 
   opBtnClickHandler(type:any,value:any){
-  
-    this.expressionStack.push({type:"NUMBER",value:this.getValue()});
-    this.setValue('');
-
-    if (value == 'EQUALS') {
-     
-        this.calculate();
-        this.expressionStack=[];
+    if(this.expressionStack.length==0&&value=="SUBTRACT"){
+      this.value='-';
+      this.calcComp.setDisplay('-');
+    }else{
+      this.pushNumber();
+      this.setValue('');
+      if (value == 'EQUALS') {
+          this.calculate();
+          this.expressionStack=[];
+      }
+      else if (value=='ADD')  {
+        this.value+='+';
+        this.expressionStack.push({type:"OPERATOR",value:"ADD"});
+        this.setValue('');
+      }else if (value=='SUBTRACT'){
+        this.value+='-';
+        this.expressionStack.push({type:"OPERATOR",value:"SUBTRACT"});
+        this.setValue('');
+      }else if(value=='MULTIPLY') {
+        this.value+='x';
+        this.expressionStack.push({type:"OPERATOR",value:"MULTIPLY"});
+        this.setValue('');
+      }else if(value=='DIVIDE') {
+        this.value+='&divide';
+        this.expressionStack.push({type:"OPERATOR",value:"DIVIDE"});
+        this.setValue('');
     }
-    else if (value=='ADD')  {
-      this.value+='+';
-      console.log(this.value)
-      this.calcComp.setDisplay(this.value);
-      this.expressionStack.push({type:"OPERATOR",value:"ADD"});
-    }else if (value=='SUBTRACT'){
-      this.value+='-';
-      console.log(this.value)
-      this.calcComp.setDisplay(this.value);
-      this.expressionStack.push({type:"OPERATOR",value:"SUBTRACT"});
-    }else if(value=='MULTIPLY') {
-      this.value+='x';
-      console.log(this.value)
-      this.calcComp.setDisplay(this.value);
-      this.expressionStack.push({type:"OPERATOR",value:"MULTIPLY"});
-    }else if(value=='DIVIDE') {
-      this.value+='&divide';
-      console.log(this.value)
-      this.calcComp.setDisplay(this.value);
-      this.expressionStack.push({type:"OPERATOR",value:"DIVIDE"});
     }
 
-    
   }
 
   calculate() {
+    console.log(this.value)
     this._backendService.postData(this.expressionStack).subscribe((response:any)=>{
       this.value = response;
-      console.log(response)
-      this.calcComp.setDisplay(this.value);
       this.setValue(this.value);
-       
     })
     };
   
-
+  pushNumber(){
+    this.expressionStack.push({type:"NUMBER",value:this.getValue()})
+  }
 
   setValue(val:string){
     this.value = val;

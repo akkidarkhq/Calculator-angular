@@ -14,7 +14,7 @@ export class OperationComponent {
 
   operationBtnModel = [{type:'OPERATOR',value:'ADD',label:'+'},{type:'OPERATOR',value:'SUBTRACT',label:'-'},
   {type:'OPERATOR',value:'MULTIPLY',label:'&#10006'},{type:'OPERATOR',value:'DIVIDE',label:'&#247'},
-  {type:'OPERATOR',value:'PERCENT',label:'%'},{type:'OPERATOR',value:'EQUALS',label:'='}];
+  {type:'OPERATOR',value:'EQUALS',label:'='}];
   
 
   constructor(private _calcService: CalcServiceService){
