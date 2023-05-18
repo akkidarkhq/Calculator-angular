@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { CalcServiceService } from '../../calcServices/calc-service.service';
+import { ButtonService } from '../button.service';
 
 
 @Component({
@@ -16,13 +16,10 @@ export class OperationComponent {
   {type:'OPERATOR',value:'MULTIPLY',label:'&#10006'},{type:'OPERATOR',value:'DIVIDE',label:'&#247'},
   {type:'OPERATOR',value:'EQUALS',label:'='}];
   
-
-  constructor(private _calcService: CalcServiceService){
-
-  }
+  constructor(private _buttonService: ButtonService){}
 
   onClick(type:any,val:any){
-    this._calcService.opBtnClickHandler(type,val);
+    this._buttonService.opBtnPress(type,val);
   }
 
 }

@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { BackendService } from './component/calc/calcServices/backendServices/backend.service';
-import { CalcServiceService } from './component/calc/calcServices/calc-service.service';
+import { CalculationService } from './component/calc/calcServices/calculation-service.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { CalcServiceService } from './component/calc/calcServices/calc-service.s
     MatButtonToggleModule,
     FormsModule,
   ],
-  providers: [CalcServiceService,BackendService],
+  providers: [CalculationService,BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

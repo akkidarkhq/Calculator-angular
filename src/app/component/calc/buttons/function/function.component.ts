@@ -1,27 +1,22 @@
 import { Component } from '@angular/core';
-import { CalcServiceService } from '../../calcServices/calc-service.service';
+import { ButtonService } from '../button.service';
 
 @Component({
   selector: 'app-function',
   templateUrl: './function.component.html',
   styleUrls: ['./function.component.css'],
-  providers:[CalcServiceService]
+  providers:[ButtonService]
 })
 export class FunctionComponent {
-  functionBtnModel = ['AC','DEL'];
+  functionBtnModel = ['AC','DEL','UNDO','REDO'];
 
 
-  constructor(private _calcService: CalcServiceService){
+  constructor(private _buttonService: ButtonService){
   }
 
   onClick(value:any) { 
-    this._calcService.fnBtnClickHandler(value);
+    console.log("function", value )
+    this._buttonService.fnBtnPress(value);
  }
 
-
-//  onMouseOver($e:any){
-//   (e:any) =>  {
-//     alert(e.target.value)
-//   }
-//  }
 }

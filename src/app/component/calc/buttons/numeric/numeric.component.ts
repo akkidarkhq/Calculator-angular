@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CalcServiceService } from '../../calcServices/calc-service.service';
+import { ButtonService } from '../button.service';
 
 @Component({
   selector: 'app-numeric',
@@ -10,11 +10,11 @@ import { CalcServiceService } from '../../calcServices/calc-service.service';
 export class NumericComponent {
   numericButtonModel = [{value:7},{value:8},{value:9},{value:4},{value:5},{value:6},{value:1},{value:2},{value:3},{value:0},{value:'.'}]
 
-  constructor(private _calcService: CalcServiceService){
+  constructor(private _buttonService:ButtonService){
   }
 
   onClick(value:any) { 
-    this._calcService.numBtnClickHandler(value);
+    this._buttonService.numBtnPress(value);
   }
 
 }
