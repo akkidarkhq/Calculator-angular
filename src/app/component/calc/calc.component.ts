@@ -41,9 +41,9 @@ export class CalcComponent {
        let  exp = this.getDisplay()+"";
         this.setValue(exp.slice(0,exp.length-1));
       }else if(key=='UNDO'){
-        this.setDisplay(this._stack.undoStack());
+        this.setValue(this._stack.undoStack());
       }else if(key=='REDO'){
-        this.setDisplay(this._stack.redoStack());
+        this.setValue(this._stack.redoStack());
       }
   }
 
