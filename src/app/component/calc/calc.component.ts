@@ -82,10 +82,20 @@ export class CalcComponent {
   calculate() {
    this._backendService.postData(this.expressionStack).subscribe((response:any)=>{
       console.log(response);
-      this.setValue(response);
-      this._stack.setStack(response);
-     
+     const res = response;
+      if(typeof response=== 'number'){
+        console.log(typeof response);
+        this.setValue(res);
+        this._stack.setStack(res);
+      }else if(typeof response == 'object'){
+        console.log(typeof response);
+        this.setDisplay("Access Denied")
+      }
+      // this.setValue(response);
+      // this._stack.setStack(response);
+      // this.checkResponse(response);
     })
+ 
     this._stack.getStack();
     };
   
@@ -112,6 +122,18 @@ export class CalcComponent {
   getDisplay(){
    return this.displayValue;
   }
-  
 
+  checkResponse(res:any){
+  const text = res;
+  const msg = text[0].message; 
+  console.log(msg == 'Please Login')
+  if(msg == 'Please Login'){
+    this.setDisplay(msg)
+  }else{
+    return;
+  }
+        
+       
+    
+    }
 }
