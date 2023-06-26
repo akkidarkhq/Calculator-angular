@@ -2,6 +2,10 @@
 
 <img width="799" alt="image" src="https://user-images.githubusercontent.com/100999421/236810433-4b8e9fd6-673a-4605-bdf8-b3c690e02c57.png">
 
+request body > raw > json
+
+[{"type":"NUMBER","value":"1"},{"type":"OPERATOR","value":"MULTIPLY"},{"type":"NUMBER","value":"56"}]
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
